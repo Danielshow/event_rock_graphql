@@ -5,7 +5,7 @@ class GraphqlController < ApplicationController
     operation_name = params[:operationName]
     context = {
       # Query context goes here, for example:
-      # current_user: current_user,
+      current_user: current_user,
     }
     result = EventgraphqlSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
@@ -32,6 +32,24 @@ class GraphqlController < ApplicationController
     else
       raise ArgumentError, "Unexpected parameter: #{ambiguous_param}"
     end
+  end
+  
+  def current_user
+    decoded_user = decode_user
+    return nil unless decoded_user
+    userId = decoded_user['userId']
+    user = User.find_by(id: userId)
+    return nil unless user
+    user
+  rescue ActiveRecord::RecordInvalid => e
+    nil
+  end
+
+  def decode_user
+    token = request.headers['Authorization']
+    return nil unless token
+    token = token.split(' ')[1]
+    JsonWebToken.decode(token)
   end
 
   def handle_error_in_development(e)

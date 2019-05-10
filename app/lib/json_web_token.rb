@@ -9,6 +9,6 @@ class JsonWebToken
   def self.decode(token)
     JWT.decode(token, JWT_KEY)[0]
   rescue JWT::DecodeError, JWT::VerificationError, JWT::ExpiredSignature => e
-    GraphQL::ExecutionError.new(e.message)
+    nil
   end
 end
