@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This  Application is a graphql backend application for event creation
+- Users can signup and login
+- Login users can create events
+- Login users can delete and update event
+- Users can register for the event
 
 Things you may want to cover:
 
 * Ruby version
+  v2.53
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
+* Setup
+- CLone this application
+- Create application.yml file and add the following variables
+```
+JWT_SECRET=
+PG_USER=
+PG_PASSWORD=
+```
+- Run `rails db:create` to create database
+- Run `rails db:migrate` to run migrations
+- Run `bundle install` to run all dependencies
+- finally run `rails s` to start the server
+* Databasve creation
+```
+rails db:create
+```
 * Database initialization
+#### Run migration using
 
-* How to run the test suite
+```
+rails db:migrate
+```
+* How to run the test suite\
+rspec
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
