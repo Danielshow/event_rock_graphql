@@ -5,5 +5,7 @@ module Types
     field :login_user, mutation: Mutations::LoginUser
     field :update_event, mutation: Mutations::UpdateEvent
     field :delete_event, mutation: Mutations::DeleteEvent
+    field :reset_password, mutation: Mutations::ResetPassword
+    field :update_password_reset, mutation: Mutations::UpdatePasswordReset
   end
 end
