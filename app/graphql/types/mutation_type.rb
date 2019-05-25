@@ -8,5 +8,6 @@ module Types
     field :reset_password, mutation: Mutations::ResetPassword
     field :update_password_reset, mutation: Mutations::UpdatePasswordReset
     field :register_for_event, mutation: Mutations::RegisterForEvent
+    field :get_users_for_event, mutation: Mutations::GetUsersForEvent
   end
 end
