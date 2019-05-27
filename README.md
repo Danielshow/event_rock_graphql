@@ -1,4 +1,4 @@
-# README
+## EventRock with GraphQL and Ruby
 
 This  Application is a graphql backend application for event creation
 - Users can signup and login
@@ -8,10 +8,10 @@ This  Application is a graphql backend application for event creation
 
 Things you may want to cover:
 
-* Ruby version
-  v2.53
+### Ruby version
+  - v2.53
 
-* Setup
+### Setup
 - CLone this application
 - Create application.yml file and add the following variables
 ```
@@ -23,7 +23,9 @@ PG_PASSWORD=
 - Run `rails db:migrate` to run migrations
 - Run `bundle install` to run all dependencies
 - finally run `rails s` to start the server
-* Databasve creation
+- visit `localhost:3000/graphiql` to run queries
+
+### Database creation
 ```
 rails db:create
 ```
@@ -35,4 +37,10 @@ rails db:migrate
 ```
 * How to run the test suite\
 rspec
+
+## Limitation
+Still in Development
+
+## Contribution
+- Clone this Repository and raise a pull request
 
