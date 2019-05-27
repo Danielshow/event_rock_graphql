@@ -20,7 +20,7 @@ module Mutations
       event.save!
       event
     rescue ActiveRecord::RecordInvalid => e
-      GraphQL::ExecutionError.new("Invalid Input #{e.record.errors.full_messages.join(',')}")
+      GraphQL::ExecutionError.new("Invalid input: #{e.record.errors.full_messages.join(',')}")
     end
   end
 end
