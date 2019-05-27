@@ -57,4 +57,4 @@ group :test do
   gem 'faker', '~> 1.8', '>= 1.8.7'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
 end
-gem 'graphiql-rails' 
+gem 'graphiql-rails'
