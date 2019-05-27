@@ -12,7 +12,9 @@ module Mutations
         name: name
       )
       token = JsonWebToken.encode(userId: user.id)
-      {user: user, token: token}
+      { user: user, token: token }
+    rescue ActiveRecord::RecordInvalid => e
+      GraphQL::ExecutionError.new("Invalid Input #{e.record.errors.full_messages.join(',')}")
     end
   end
 end

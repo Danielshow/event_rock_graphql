@@ -5,7 +5,7 @@ module Mutations
     type [Types::UserType]
     def resolve(event_id: nil)
       unless context[:current_user]
-        return  GraphQL::ExecutionError.new("You need to Login to gain access")
+        return GraphQL::ExecutionError.new('You need to Login to gain access')
       end
 
       event = Event.find_by(id: event_id)
