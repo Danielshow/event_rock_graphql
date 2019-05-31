@@ -38,6 +38,10 @@ rails db:migrate
 * How to run the test suite\
 rspec
 
+## Stack
+- Ruby on Rails
+- GraphQL
+
 ## Limitation
 Still in Development
 
